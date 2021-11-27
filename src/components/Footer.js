@@ -7,12 +7,18 @@ const Footer = ({title,website,address,postcode, isOpen}) =>  {
     const nickname = <p>Cappuccino</p>
         return (
             <div>
-                <h1>Passakorn Yongbantom</h1>
                 {nickname}
-                <h3>{title} &copy; {new Date().getFullYear()}</h3>
-                <p>{website} {address} {postcode} {isOpen}</p>
+                <h1 style={styles.title}>{title} &copy; {new Date().getFullYear()}</h1>
+                <p style={{color:'green',fontSize:18}}>{website} {address} {postcode} {isOpen}</p>
+                <p style={styles.title}>Passakorn</p>
             </div>
         )
+    }
+
+    const styles ={
+        title : {
+            color: 'red'
+        }
     }
 
 Footer.propTypes ={

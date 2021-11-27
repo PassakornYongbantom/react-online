@@ -1,37 +1,40 @@
 import React from 'react'
 import Logo from './Logo'
+import Title from '../styles/title/Title'
+import Button from '../styles/button/Button'
+import PropTypes from 'prop-types';
+
 
 const Header = () => {
+    
+        let companyName = "TNI"
+        const companyAddress = <p>Bangkok</p>
+        let number = 10
+            const showMessage = () => {
+            return companyName + ".com"
+        }
 
-    let companyName = "TNI"
-    const companyAddress = <p>Bangkok</p>
-    let number = 10
+        const isLogin = true;
+        const keyword = 'correct';
+        const showMe = () =>{
+            alert('Hello react')
+        }
 
-    const showMessage = () => {
-        return companyName + ".com"
-    }
-
-    const isLogin = true;
-
-    const showMe = () =>{
-        alert('Hello react')
-    }
-
-    const products = [
-
-        {id: 1, name: "Coke"},
-        {id: 2, name: "Pepsi"}
-
-    ]
-
+        const products = [
+            {id: 1, name: "Coke"},
+            {id: 2, name: "Pepsi"}
+        ]
+    
     return (
         <div>
+
+            <Title>Project React</Title>
             <h1>Hello {showMessage()}</h1>
             {companyAddress}
             {number * 2}
             {showMessage()}
 
-            {/* {
+            {
                 isLogin === true ? (
                 <>
                     <p>Welcome</p>
@@ -45,9 +48,25 @@ const Header = () => {
                 )
             }
 
-            { isLogin ? <Logo /> : <p>Unlock. </p> } */}
+            { isLogin ? <Logo /> : <p>Unlock. </p> }
 
-            <button onClick={showMe}>Click me!</button>
+            { keyword === 'correct' ? (
+                <>
+                <Button primary onClick={showMe}>
+                    Click me!
+                </Button> 
+                </>
+            ) : (
+                <>
+                <Button onClick={showMe}>
+                    Click me !
+                </Button>
+                </>
+            )
+            
+            }
+
+            <otherButton></otherButton>
 
             <ul>
 
@@ -66,6 +85,10 @@ const Header = () => {
         </div>
     )
 }
+
+Header.propTypes ={
+  keyword: PropTypes.bool
+};
 
 export default Header;
 
