@@ -7,10 +7,12 @@ function App() {
     <>
       <Logo/>
       <Header/>
-      <Footer/>
+      <Footer title = {9} website = {"www.google.com"} address = {"Bangkok"} postcode = {"11000"} isOpen></Footer>
       <Logo/>
     </>
   );
 }
+
+
 
 export default App;
