@@ -66,8 +66,6 @@ const Header = () => {
             
             }
 
-            <otherButton></otherButton>
-
             <ul>
 
             {
