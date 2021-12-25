@@ -1,11 +1,12 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
 import axios from 'axios'
-import { Spinner, CardDeck, Card } from "react-bootstrap"
+import { Spinner, CardDeck, Card, Button } from "react-bootstrap"
 
 function DetailPage() {
 
     const { id, title } = useParams()
+    const history = useHistory()
 
     const [detail, setDetail] = React.useState([])
     const [loading, setLoading] = React.useState(false)
@@ -62,6 +63,12 @@ function DetailPage() {
                 <div className="col-md-12 mt-4" >
                     <h2>Detail Page</h2>
                     <p>{title} ({id})</p>
+
+                    <Button variant="dark" className="mb-4" onClick ={()=>{
+
+                        history.goBack()
+
+                    }}>Back</Button>
 
                     <div className='row'>
                         <CardDeck>
