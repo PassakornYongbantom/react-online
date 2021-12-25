@@ -82,7 +82,7 @@ function ProductPage() {
                                             <td><Badge variant="success">{p.view}</Badge></td>
                                             {/* <td>{p.picture}</td> */}
                                             <td><Image src={p.picture} rounded width="60" /></td>
-                                            <td><Link to="/detail"><Button variant="outline-primary" to = "/detail">Click <BsArrowRightSquareFill/> </Button></Link></td>
+                                            <td><Link to={`/detail/${p.id}/title/${p.title}`}><Button variant="outline-primary" to = "/detail">Click <BsArrowRightSquareFill/> </Button></Link></td>
                                         </tr>
                                         
                                     )
